@@ -26,8 +26,7 @@ public class PlayerMovementFinal : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
-        if (Input.GetKeyDown(KeyCode.Alpha1)) transform.position = new Vector3(10, 2, 10);
-        if (Input.GetKeyDown(KeyCode.Alpha2)) transform.position = new Vector3(0, 2, -10);
+        
 
         if (isRunning)
         {

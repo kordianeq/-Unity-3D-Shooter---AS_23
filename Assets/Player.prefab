@@ -110,6 +110,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2.5
   jumpForce: 5
+  sprintSpeed: 10
+  AnimatorRef: {fileID: 0}
 --- !u!114 &507489579209930341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +200,6 @@ GameObject:
   - component: {fileID: 7176293120839946914}
   - component: {fileID: 3023283474244113081}
   - component: {fileID: 1759722039904269298}
-  - component: {fileID: 6751628724546479967}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -215,7 +216,7 @@ Transform:
   m_GameObject: {fileID: 7580668549292099244}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.502, y: 0.806, z: -1.973}
+  m_LocalPosition: {x: 0.502, y: 0.896, z: -1.882}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -280,20 +281,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7580668549292099244}
   m_Enabled: 1
---- !u!114 &6751628724546479967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7580668549292099244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 574b76b5e81e1244b80b92c0a3759eb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseSensitivity: 150
-  player: {fileID: 1826472634513076365}
 --- !u!1001 &6902774786056510616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -308,7 +295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 443880682a8736b44810c3cb0af568b3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.014
+      value: -1.019
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 443880682a8736b44810c3cb0af568b3, type: 3}
       propertyPath: m_LocalPosition.z

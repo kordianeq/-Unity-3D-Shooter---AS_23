@@ -45,6 +45,11 @@ public class Movment : MonoBehaviour
             Debug.Log("Chowasz miecz");
 
         }
+        
+        //if(Input.GetKeyUp(KeyCode.Alpha1))
+        //{
+
+        //}
 
     }
 
@@ -63,6 +68,10 @@ public class Movment : MonoBehaviour
         animator.SetBool("SwordEquip", false);
 
     }
-
+    public void CastSpell()
+    {
+        
+        
+    }
     
 }

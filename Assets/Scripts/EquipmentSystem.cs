@@ -9,10 +9,13 @@ public class EquipmentSystem: MonoBehaviour
     [SerializeField] GameObject weaponSlot;
     GameObject currentWeaponInHand;
     GameObject currentWeaponInSlot;
+    [SerializeField] GameObject Fire;
+    ParticleSystem currentFire;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentFire = Fire.GetComponent<ParticleSystem>();
         currentWeaponInSlot = Instantiate(weapon, weaponSlot.transform);
     }
 
@@ -29,6 +32,11 @@ public class EquipmentSystem: MonoBehaviour
         Destroy(currentWeaponInHand);
     }
     // Update is called once per frame
+
+    public void CastFire()
+    {
+        currentFire.Play();
+    }
     void Update()
     {
         
