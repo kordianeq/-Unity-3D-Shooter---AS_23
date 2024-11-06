@@ -5,8 +5,9 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     float rotationOnX;
+    float rotationOnY;
     [SerializeField] float mouseSensitivity = 150f;
-    [SerializeField] Transform player;
+    [SerializeField] Transform cameraPoint;
 
     void Start()
     {
@@ -20,8 +21,14 @@ public class CameraMovement : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * mouseSensitivity;
 
         rotationOnX -= mouseY;
-        rotationOnX = Mathf.Clamp(rotationOnX, -30f, 10f);
-        transform.localEulerAngles = new Vector3(rotationOnX, 0f, 0f);
-        player.Rotate(Vector3.up * mouseX);
+        
+
+        rotationOnY += mouseX;
+        rotationOnX = Mathf.Clamp(rotationOnX, -30f, 40f);
+
+        cameraPoint.rotation = Quaternion.Euler(rotationOnX, rotationOnY, 0);
+        
+        
+        
     }
 }

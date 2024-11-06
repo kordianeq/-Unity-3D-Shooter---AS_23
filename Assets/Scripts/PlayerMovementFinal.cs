@@ -6,18 +6,22 @@ public class PlayerMovementFinal : MonoBehaviour
     [SerializeField] public float jumpForce = 5.0f;
     [SerializeField] public float sprintSpeed = 10.0f;
 
+    GameObject camera;
+    
     public GameObject AnimatorRef; //refka do animatora
     Animator animator;
 
     float horizontalInput, verticalInput;
-    Rigidbody rigidbody;
+    Rigidbody RB2B;
     bool isGrounded, isRunning;
 
 
     void Start()
     {
-        ; animator = AnimatorRef.GetComponent<Animator>();
-        rigidbody = GetComponent<Rigidbody>();
+        animator = AnimatorRef.GetComponent<Animator>();
+        RB2B = GetComponent<Rigidbody>();
+        camera = GameObject.Find("CamHolder");
+
         isGrounded = true;
         isRunning = false;
     }
@@ -30,21 +34,23 @@ public class PlayerMovementFinal : MonoBehaviour
 
         if (isRunning)
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * sprintSpeed * verticalInput);
-            transform.Translate(Vector3.right * Time.deltaTime * sprintSpeed * horizontalInput);
+            transform.Translate(camera.transform.forward * Time.deltaTime * sprintSpeed * verticalInput);
+            transform.Translate(camera.transform.right * Time.deltaTime * sprintSpeed * horizontalInput);
+
+            
             animator.SetBool("isRunning", true); //ustawanie isRuning w animatorze
 
         }
         else
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
-            transform.Translate(Vector3.right * Time.deltaTime * speed * horizontalInput);
+            transform.Translate(camera.transform.forward * Time.deltaTime * speed * verticalInput);
+            transform.Translate(camera.transform.right * Time.deltaTime * speed * horizontalInput);
             animator.SetBool("isRunning", false); //ustawanie isRuning w animatorze
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-            rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            RB2B.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
             isGrounded = false;
         }

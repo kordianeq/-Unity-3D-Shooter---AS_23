@@ -3,9 +3,8 @@ using UnityEngine;
 public class Upgrade : MonoBehaviour
 {
     Animator animator;
-    public GameObject AnimatorRef;
-    BoxCollider boxcolider;
-    BoxCollider doorColider;
+    GameObject PlayerCharacter;
+   
     ParticleSystem particlesystem;
 
     public Color ParticleColor1;
@@ -16,8 +15,8 @@ public class Upgrade : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        boxcolider = GetComponent<BoxCollider>();
-        animator = AnimatorRef.GetComponent<Animator>();
+        PlayerCharacter = GameObject.FindWithTag("PlayerCharacter");
+        animator = PlayerCharacter.GetComponent<Animator>();
         particlesystem = GetComponent<ParticleSystem>();
         Epressed = false;
     }

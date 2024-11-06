@@ -1,27 +1,38 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CanvasMenager : MonoBehaviour
 {
     public Text timerText;
+    public TextMeshProUGUI speed;
 
+    GameObject player;
+    PlayerMovementTutorial playerMovement; 
     bool isGamePaused;
     [SerializeField] GameObject PausePanel;
+
+    [Header("Keybinds")]
+    public KeyCode pauseButton = KeyCode.P;
 
     // Start is called before the first frame update
     private void Start()
     {
         PausePanel.SetActive(false);
         isGamePaused = false;
+
+        player = GameObject.Find("Player");
+        playerMovement = player.GetComponent<PlayerMovementTutorial>();
     }
 
     // Update is called once per frame
     public void Update()
     {
-      
 
-        if (Input.GetKeyUp(KeyCode.P) && isGamePaused == false)
+        speed.text = "Speed:" + playerMovement.speed.ToString();
+
+        if (Input.GetKeyUp(pauseButton) && isGamePaused == false)
         {
             PausePanel.SetActive(true);
             OnClickPause(true);
@@ -31,7 +42,7 @@ public class CanvasMenager : MonoBehaviour
 
         }
         else
-        if (Input.GetKeyUp(KeyCode.P) && isGamePaused == true)
+        if (Input.GetKeyUp(pauseButton) && isGamePaused == true)
         {
             PausePanel.SetActive(false);
             OnClickPause(false);
