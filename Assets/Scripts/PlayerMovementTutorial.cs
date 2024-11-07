@@ -26,6 +26,7 @@ public class PlayerMovementTutorial : MonoBehaviour
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode sprintKey = KeyCode.LeftShift;
+    public KeyCode drawWeapon = KeyCode.F;
 
     [Header("Ground Check")]
     public float playerHeight;
@@ -104,6 +105,21 @@ public class PlayerMovementTutorial : MonoBehaviour
         else
         {
             isRunning = false;
+        }
+
+
+        if (Input.GetKeyUp(drawWeapon) && animator.GetBool("SwordEquip") == false)
+        {
+           animationManager.EquipSword();
+            Debug.Log("Dobywasz miecz");
+
+        }
+        else
+        if (Input.GetKeyUp(drawWeapon) && animator.GetBool("SwordEquip") == true)
+        {
+            animationManager.UnequipSword();
+            Debug.Log("Chowasz miecz");
+
         }
     }
 

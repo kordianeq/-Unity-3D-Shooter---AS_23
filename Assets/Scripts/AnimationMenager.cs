@@ -7,7 +7,6 @@ public class AnimationMenager : MonoBehaviour
     GameObject player;
     PlayerMovementTutorial playerMovement;
 
-    
 
     void Start()
     {
@@ -23,27 +22,12 @@ public class AnimationMenager : MonoBehaviour
 
         animator.SetFloat("Vertical", Input.GetAxis("Vertical"));
         animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
-        //animator.SetBool("isRunning", 
-
-        
+       
 
         animator.SetFloat("Speed", playerMovement.speed);
 
         //Debug.Log("Speed: " + speed.ToString("F2"));
 
-        if (Input.GetKeyUp(KeyCode.F) && animator.GetBool("SwordEquip") == false)
-        {
-            EquipSword();
-            Debug.Log("Dobywasz miecz");
-
-        }
-        else
-        if (Input.GetKeyUp(KeyCode.F) && animator.GetBool("SwordEquip") == true)
-        {
-            UnequipSword();
-            Debug.Log("Chowasz miecz");
-
-        }
         
         //if(Input.GetKeyUp(KeyCode.Alpha1))
         //{

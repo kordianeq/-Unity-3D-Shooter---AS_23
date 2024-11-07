@@ -143,7 +143,6 @@ MonoBehaviour:
   weaponHeld: {fileID: 4849854188375122809}
   weapon: {fileID: 2839524829476184550, guid: b31cf3d5ac315214a950e823cb9e2b9f, type: 3}
   weaponSlot: {fileID: 7480098176614170354}
-  Fire: {fileID: 0}
 --- !u!114 &8504602906467554140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,9 +160,12 @@ MonoBehaviour:
   jumpForce: 10
   jumpCooldown: 0.25
   airMultiplier: 0.4
+  speed: 0
   walkSpeed: 0
-  sprintSpeed: 0
+  sprintSpeed: 20
   jumpKey: 32
+  sprintKey: 304
+  drawWeapon: 102
   playerHeight: 1.75
   whatIsGround:
     serializedVersion: 2
