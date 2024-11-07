@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 1826472634513076366}
   - component: {fileID: 1826472634513076360}
   - component: {fileID: 1826472634513076361}
-  - component: {fileID: 507489579209930341}
   - component: {fileID: 8504602906467554140}
   m_Layer: 0
   m_Name: Player
@@ -128,21 +127,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &507489579209930341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826472634513076372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54e26c8a21e0e254eb110888288a8294, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponHeld: {fileID: 4849854188375122809}
-  weapon: {fileID: 2839524829476184550, guid: b31cf3d5ac315214a950e823cb9e2b9f, type: 3}
-  weaponSlot: {fileID: 7480098176614170354}
 --- !u!114 &8504602906467554140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,6 +345,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 443880682a8736b44810c3cb0af568b3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6043457151581615802}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 443880682a8736b44810c3cb0af568b3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8144415508615206964}
   m_SourcePrefab: {fileID: 100100000, guid: 443880682a8736b44810c3cb0af568b3, type: 3}
 --- !u!4 &5079561004463956816 stripped
 Transform:
@@ -384,6 +371,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a48a343a1b83e49929dba309a7e615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8144415508615206964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5983872997472526793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54e26c8a21e0e254eb110888288a8294, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponHeld: {fileID: 4849854188375122809}
+  weapon: {fileID: 2839524829476184550, guid: b31cf3d5ac315214a950e823cb9e2b9f, type: 3}
+  weaponSlot: {fileID: 7480098176614170354}
 --- !u!4 &6359412961426455411 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 443880682a8736b44810c3cb0af568b3, type: 3}

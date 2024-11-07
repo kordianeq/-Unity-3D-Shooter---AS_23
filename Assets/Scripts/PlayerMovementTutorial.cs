@@ -46,8 +46,11 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     Animator animator;
 
+    EquipmentSystem equipment;
+
     private void Start()
     {
+        equipment = GetComponent<EquipmentSystem>();
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         animationManager = GetComponentInChildren<AnimationMenager>();
@@ -110,7 +113,8 @@ public class PlayerMovementTutorial : MonoBehaviour
 
         if (Input.GetKeyUp(drawWeapon) && animator.GetBool("SwordEquip") == false)
         {
-           animationManager.EquipSword();
+            animationManager.EquipSword();
+           
             Debug.Log("Dobywasz miecz");
 
         }
@@ -118,6 +122,7 @@ public class PlayerMovementTutorial : MonoBehaviour
         if (Input.GetKeyUp(drawWeapon) && animator.GetBool("SwordEquip") == true)
         {
             animationManager.UnequipSword();
+          
             Debug.Log("Chowasz miecz");
 
         }

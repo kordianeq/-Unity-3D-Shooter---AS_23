@@ -6,14 +6,17 @@ public class AnimationMenager : MonoBehaviour
     Animator animator;
     GameObject player;
     PlayerMovementTutorial playerMovement;
-
+    
 
     void Start()
     {
         animator = GetComponent<Animator>();
         animator.SetBool("SwordEquip", false);
+
         player = GameObject.Find("Player");
         playerMovement = player.GetComponent<PlayerMovementTutorial>();
+
+        
     }
 
     // Update is called once per frame
@@ -31,9 +34,8 @@ public class AnimationMenager : MonoBehaviour
         
         //if(Input.GetKeyUp(KeyCode.Alpha1))
         //{
-
+            
         //}
-
     }
 
     public void Jump()
@@ -44,12 +46,10 @@ public class AnimationMenager : MonoBehaviour
     public void EquipSword()
     {
         animator.SetBool("SwordEquip", true);
-
     }
     public void UnequipSword()
     {
         animator.SetBool("SwordEquip", false);
-
     }
     public void CastSpell()
     {

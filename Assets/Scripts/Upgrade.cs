@@ -50,10 +50,7 @@ public class Upgrade : MonoBehaviour
                
             }
         }
-        if(gameObject.CompareTag("Doors") && obiect.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("Drzwi");
-        }
+        
     }
     
 }
