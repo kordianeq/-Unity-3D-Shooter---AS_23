@@ -5,7 +5,7 @@ public class AnimationMenager : MonoBehaviour
     //References
     Animator animator;
     GameObject player;
-    PlayerMovementTutorial playerMovement;
+    PlayerMovement playerMovement;
 
     
 
@@ -14,7 +14,7 @@ public class AnimationMenager : MonoBehaviour
         animator = GetComponent<Animator>();
         animator.SetBool("SwordEquip", false);
         player = GameObject.Find("Player");
-        playerMovement = player.GetComponent<PlayerMovementTutorial>();
+        playerMovement = player.GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -52,6 +52,10 @@ public class AnimationMenager : MonoBehaviour
 
     }
 
+    public void Climb()
+    {
+        animator.SetTrigger("Climb");
+    }
     public void Jump()
     {
         animator.SetTrigger("Jump");

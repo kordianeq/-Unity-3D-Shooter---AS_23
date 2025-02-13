@@ -9,13 +9,11 @@ public class CanvasMenager : MonoBehaviour
     public TextMeshProUGUI speed;
 
     GameObject player;
-    PlayerMovementTutorial playerMovement; 
+    PlayerMovement playerMovement; 
     bool isGamePaused;
     [SerializeField] GameObject PausePanel;
 
-    [Header("Keybinds")]
-    public KeyCode pauseButton = KeyCode.P;
-
+   
     // Start is called before the first frame update
     private void Start()
     {
@@ -23,16 +21,18 @@ public class CanvasMenager : MonoBehaviour
         isGamePaused = false;
 
         player = GameObject.Find("Player");
-        playerMovement = player.GetComponent<PlayerMovementTutorial>();
+        playerMovement = player.GetComponent < PlayerMovement>();
     }
 
     // Update is called once per frame
     public void Update()
     {
+        
+        speed.text = "Speed:" + MathF.Round(playerMovement.speed).ToString();
+        
 
-        speed.text = "Speed:" + playerMovement.speed.ToString();
 
-        if (Input.GetKeyUp(pauseButton) && isGamePaused == false)
+        if (Input.GetButtonUp("PauseGame") && isGamePaused == false)
         {
             PausePanel.SetActive(true);
             OnClickPause(true);
@@ -42,7 +42,7 @@ public class CanvasMenager : MonoBehaviour
 
         }
         else
-        if (Input.GetKeyUp(pauseButton) && isGamePaused == true)
+        if (Input.GetButtonUp("PauseGame") && isGamePaused == true)
         {
             PausePanel.SetActive(false);
             OnClickPause(false);

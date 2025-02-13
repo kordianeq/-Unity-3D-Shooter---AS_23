@@ -65,6 +65,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 128530128216217276}
   - {fileID: 306401816893105501}
   - {fileID: 3571323877421556658}
   - {fileID: 6359412961426455411}
@@ -100,7 +101,7 @@ CapsuleCollider:
   m_Radius: 0.26690018
   m_Height: 2.088007
   m_Direction: 1
-  m_Center: {x: 0.005405605, y: -0.00043272972, z: -0.031036317}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1826472634513076361
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,7 +144,6 @@ MonoBehaviour:
   weaponHeld: {fileID: 4849854188375122809}
   weapon: {fileID: 2839524829476184550, guid: b31cf3d5ac315214a950e823cb9e2b9f, type: 3}
   weaponSlot: {fileID: 7480098176614170354}
-  Fire: {fileID: 0}
 --- !u!114 &8504602906467554140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,17 +158,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7
   groundDrag: 10
-  jumpForce: 10
+  jumpForce: 7
   jumpCooldown: 0.25
+  climbCooldown: 0.5
   airMultiplier: 0.4
+  speed: 0
   walkSpeed: 0
-  sprintSpeed: 0
+  sprintSpeed: 20
   jumpKey: 32
+  sprintKey: 304
   playerHeight: 1.75
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
   orientation: {fileID: 306401816893105501}
+  feet: {fileID: 128530128216217276}
 --- !u!1 &4849854188375122809
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,9 +214,9 @@ GameObject:
   m_Component:
   - component: {fileID: 306401816893105501}
   m_Layer: 0
-  m_Name: Target
+  m_Name: lookAtObj
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 8418204508859773708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -262,6 +266,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6548092538245844215}
   m_LocalEulerAnglesHint: {x: -3.474, y: 0.807, z: 166.905}
+--- !u!1 &8796412434930196371
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 128530128216217276}
+  m_Layer: 0
+  m_Name: Feet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &128530128216217276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8796412434930196371}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.021, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1826472634513076365}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6902774786056510616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -312,7 +347,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 443880682a8736b44810c3cb0af568b3, type: 3}
       propertyPath: m_Name
-      value: Baba
+      value: PlayerCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 443880682a8736b44810c3cb0af568b3, type: 3}
+      propertyPath: m_TagString
+      value: PlayerCharacter
       objectReference: {fileID: 0}
     - target: {fileID: 1852576806548013000, guid: 443880682a8736b44810c3cb0af568b3, type: 3}
       propertyPath: m_LocalPosition.x
